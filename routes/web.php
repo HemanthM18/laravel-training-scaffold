@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\TaskController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +26,10 @@ Route::get('/', function () {
 //   - DELETE /projects/{project}            (destroy)
 //   - Same set for /tasks (nested under projects, e.g., /projects/{project}/tasks)
 // Hint: Route::resource('projects', ProjectController::class);
+
+Route::resource('projects', ProjectController::class);
+Route::resource('projects.tasks', TaskController::class);
+
 // Wrap them in auth middleware (after Day 8): Route::middleware('auth')->group(function () { ... });
 
 // TODO Day 8: install Breeze, then Breeze will add its own auth routes here
