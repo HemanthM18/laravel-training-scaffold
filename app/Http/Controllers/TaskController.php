@@ -8,8 +8,10 @@ use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
-    public function index(Project $project)
+    public function index($project) // For verification purpose
     {
+        return 'show tasks for project ' . $project; // For verification purpose
+
         // TODO Day 5: return view('tasks.index', ['tasks' => $project->tasks]);
         // TODO Day 6: eager load — $project->load('tasks.comments', 'tasks.assignee');
         abort(501, 'TODO Day 5 — implement task index');
