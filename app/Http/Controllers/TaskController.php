@@ -10,15 +10,17 @@ class TaskController extends Controller
 {
     public function index($project) // For verification purpose
     {
-        return 'show tasks for project ' . $project; // For verification purpose
+        return view('tasks.index'); // For verification purpose
 
         // TODO Day 5: return view('tasks.index', ['tasks' => $project->tasks]);
         // TODO Day 6: eager load — $project->load('tasks.comments', 'tasks.assignee');
         abort(501, 'TODO Day 5 — implement task index');
     }
 
-    public function create(Project $project)
+    public function create($project) // For verification purpose
     {
+        return view('tasks.create'); // For verification purpose
+        
         // TODO Day 5: return view('tasks.create', ['project' => $project]);
         abort(501, 'TODO Day 5 — implement task create');
     }
@@ -31,14 +33,18 @@ class TaskController extends Controller
         abort(501, 'TODO Day 5 — implement task store');
     }
 
-    public function show(Task $task)
+    public function show($task) // For verification purpose
     {
+        return view('tasks.show'); // For verification purpose
+
         // TODO Day 5: return view('tasks.show', ['task' => $task]);
         abort(501, 'TODO Day 5 — implement task show');
     }
 
-    public function edit(Task $task)
+    public function edit($task) // For verification purpose
     {
+        return view('tasks.edit'); // For verification purpose
+
         // TODO Day 5: return view('tasks.edit', ['task' => $task]);
         // TODO Day 9: $this->authorize('update', $task);
         abort(501, 'TODO Day 5 — implement task edit');

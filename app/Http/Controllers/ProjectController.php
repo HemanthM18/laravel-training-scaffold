@@ -10,7 +10,7 @@ class ProjectController extends Controller
     public function index()
     {
         // TODO Day 2 (stub): return a placeholder string
-        return 'show all projects';
+        return view('projects.index');
         // TODO Day 5: replace with — return view('projects.index', ['projects' => Project::all()]);
         // TODO Day 6: add eager loading — Project::with('tasks')->get() — to fix N+1
         // TODO Day 8: scope to logged-in user — auth()->user()->projects
@@ -19,7 +19,7 @@ class ProjectController extends Controller
     public function create()
     {
         // TODO Day 2 (stub) → Day 5: return view('projects.create');
-        return 'create project form';
+        return view('projects.create');
     }
 
     public function store(Request $request)
@@ -32,7 +32,7 @@ class ProjectController extends Controller
 
     public function show($project) // For verification purpose
     {
-        return 'show project ' . $project; // For verification purpose
+        return view('projects.show'); // For verification purpose
 
         // TODO Day 5: return view('projects.show', ['project' => $project]);
         // TODO Day 6: load relationships — $project->load('tasks.comments', 'members');
@@ -40,8 +40,10 @@ class ProjectController extends Controller
         abort(501, 'TODO Day 5 — implement show');
     }
 
-    public function edit(Project $project)
+    public function edit($project) // For verification purpose
     {
+        return view('projects.edit');  // For verification purpose
+
         // TODO Day 5: return view('projects.edit', ['project' => $project]);
         // TODO Day 9: $this->authorize('update', $project);
         abort(501, 'TODO Day 5 — implement edit');
